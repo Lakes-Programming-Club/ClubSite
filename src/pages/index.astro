@@ -1,7 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from "../components/Hero.astro";
 ---
 
 <Layout>
- <h1>Hello World!</h1>
+    <Hero/>
+    <main class="container">
+        <section>
+            <h2>What We Do</h2>
+            <ul>
+                <li>Workshops on Foo, Bar, and more</li>
+                <li>Collaborative qux corge</li>
+                <li>Spam and eggs green</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Upcoming Events</h2>
+            <article>
+                <h3>Intro to Foo Development</h3>
+                <p>Friday, 4:20pm - Room 69</p>
+            </article>
+            <article>
+                <h3>Monthly Bar</h3>
+                <p>Next Saturday, 3am - Corge Qux</p>
+            </article>
+        </section>
+        <section id="join">
+            <h2>Get Involved</h2>
+            <form>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
 </Layout>
