@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from "../components/Hero.astro";
+import EventList from '../components/EventList.astro';
 ---
 
 <Layout>
@@ -17,14 +18,7 @@ import Hero from "../components/Hero.astro";
         </section>
         <section>
             <h2>Upcoming Events</h2>
-            <article>
-                <h3>Intro to Foo Development</h3>
-                <p>Friday, 4:20pm - Room 69</p>
-            </article>
-            <article>
-                <h3>Monthly Bar</h3>
-                <p>Next Saturday, 3am - Corge Qux</p>
-            </article>
+            <EventList filter="upcoming" display="short"/>
         </section>
         <section id="join">
             <h2>Get Involved</h2>

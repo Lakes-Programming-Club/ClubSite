@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from "../components/Hero.astro";
+import Navbar from "../components/Navbar.astro";
+import EventList from '../components/EventList.astro';
+---
+
+<Layout>
+    <Navbar/>
+    <main class="container">
+        <section>
+            <h1>Events</h1>
+            <br>
+            <h2>Upcoming Events</h2>
+            <EventList filter="upcoming" display="full"/>
+
+            <h2>Past Events</h2>
+            <EventList filter="past" display="full"/>
+        </section>
+    </main>
+</Layout>

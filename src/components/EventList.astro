@@ -1,0 +1,45 @@
+---
+import {events} from '../data/events.js';
+
+export interface Props {
+    filter?: 'all' | 'upcoming' | 'past'
+    display?: 'short' | 'full'
+}
+
+const { filter = 'all', display = 'full'} = Astro.props;
+
+const now = new Date();
+const parseDate = (str: string) => new Date(str + 'T00:00:00');
+
+let filteredEvents = events;
+
+if (filter === 'upcoming') {
+    filteredEvents = events.filter(e => parseDate(e.date) >= now);
+} else if (filter === 'past') {
+    filteredEvents = events.filter(e => parseDate(e.date) < now);
+}
+---
+
+<section>
+    {filteredEvents.length > 0 ? (
+        display === 'short' ? (
+                <ul>
+                    {filteredEvents.map(event => (
+                            <li>
+                                <strong>{event.date}</strong>: {event.title}
+                            </li>
+                    ))}
+                </ul>
+        ) : (
+            filteredEvents.map(event => (
+                    <article>
+                        <h4>{event.date}</h4>
+                        <h3>{event.title}</h3>
+                        <p>{event.description}</p>
+                    </article>
+            ))
+        )
+    ) : (
+            <p>No events found.</p>
+    )}
+</section>
