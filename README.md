@@ -1,48 +1,62 @@
-# Astro Starter Kit: Basics
+# Lakes Programming Club Website
+
+This is the official website for the Lakes Programming Club, built with [Astro](https://astro.build/). The site features club information, upcoming events, and a showcase of projects.
+
+## Features
+
+- Home page with club overview
+- Projects page fetching live data from GitHub
+- Join page for new members
+- Events page for past and upcoming events
+
+## Tech Stack
+
+- Astro
+- TypeScript & JavaScript
+- npm
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js v18 or newer
+- npm
+
+### Installation
+
+1. Clone the repository:
+     ```sh
+     git clone https://github.com/Lakes-Programming-Club/your-repo.git
+     cd your-repo
+     ```
+
+2. Install dependencies:
+     ```sh
+     npm install
+    ```
+
+### Running the Development Server
 
 ```sh
-npm create astro@latest -- --template basics
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Visit [http://localhost:4321](http://localhost:4321) to view the site locally.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Building for Production
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+npm run build
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The static site will be generated in the `dist` directory.
 
-## 🧞 Commands
+### Preview Production Build
 
-All commands are run from the root of the project, from a terminal:
+```sh
+npm run preview
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## License
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[LICENSE](LICENSE.md)

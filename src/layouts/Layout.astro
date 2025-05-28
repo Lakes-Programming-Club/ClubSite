@@ -1,5 +1,6 @@
 ---
 // import '../styles/main.module.scss';
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,7 +11,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" rel="stylesheet">
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />

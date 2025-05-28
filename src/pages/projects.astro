@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+
+const res = await fetch("https://api.github.com/orgs/Lakes-Programming-Club/repos")
+
+if (!res.ok) { throw new Error(`Error! status: ${res.status}`) }
+
+interface Repo { name: string; description: string; url: string; }
+
+const projects: Repo[] = await res.json()
+
+---
+
+<Layout title="Projects">
+    <Navbar/>
+    <main class="container">
+        <section>
+            <h1>Projects</h1>
+            <p>Here are some of the projects our club has worked on:</p>
+            {
+                projects.length > 0 ? (
+                    projects.map(project => (
+                        <article>
+                            <a href={project.url}><h2>{project.name}</h2></a>
+                            <p>{project.description}</p>
+                        </article>
+                    ))
+                ) : (
+                    <p>No projects found.</p>
+                )
+            }
+        </section>
+    </main>
+
+</Layout>
