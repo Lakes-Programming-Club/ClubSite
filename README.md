@@ -38,7 +38,7 @@ This is the official website for the Lakes Programming Club, built with [Astro](
 ### Running the Development Server
 
 ```sh
-npm run dev
+astro dev
 ```
 
 Visit [http://localhost:4321](http://localhost:4321) to view the site locally.
@@ -46,7 +46,7 @@ Visit [http://localhost:4321](http://localhost:4321) to view the site locally.
 ### Building for Production
 
 ```sh
-npm run build
+astro build
 ```
 
 The static site will be generated in the `dist` directory.
@@ -54,7 +54,7 @@ The static site will be generated in the `dist` directory.
 ### Preview Production Build
 
 ```sh
-npm run preview
+astro preview
 ```
 
 ## License
