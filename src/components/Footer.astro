@@ -1,0 +1,30 @@
+---
+interface Social { name: string, icon: string, url: string }
+
+const socials: Social[] = [
+    { name: "Discord", url: "https://discord.gg/kHWXarJYN8", icon: "/ClubSite/discord.png" }
+]
+
+---
+
+<footer>
+    <nav class="container">
+        <ul>
+            <li>
+                <a href="https://github.com/Lakes-Programming-Club/ClubSite"><small>Source</small></a>
+            </li>
+        </ul>
+        <ul>
+            {
+                socials.map((social) => (
+                    <li class="social">
+                        <a class="contrast" href = {social.url} target = "_blank">
+                            <img class = "dark-mode" src ={social.icon} alt = {social.name}/>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+
+    </nav>
+</footer>

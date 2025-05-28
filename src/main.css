@@ -1,0 +1,14 @@
+.social img {
+    width: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.social li {
+    margin: 0 1px;
+}
+
+.social a {
+    margin: 0;
+    padding: 0;
+}
