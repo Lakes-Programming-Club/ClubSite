@@ -3,6 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import Hero from "../components/Hero.astro";
 import EventList from '../components/EventList.astro';
 import Footer from "../components/Footer.astro";
+
+const token = process.env.GITHUB_TOKEN;
+
+const res = await fetch("https://api.github.com/orgs/Lakes-Programming-Club/members", {
+headers: {
+    Authorization: `Bearer ${token}`,
+    Accept: "application/vnd.github+json"
+}
+});
+
+if (!res.ok) { throw new Error(`Error! status: ${res.status}`) }
+
+const members = await res.json();
+
 ---
 
 <Layout title="Home">
@@ -23,6 +37,7 @@ import Footer from "../components/Footer.astro";
         </section>
         <section id="join">
             <h2>Get Involved</h2>
+            <h4>So far we have {members.length} members</h4>
             <form>
                 <label for="name">Name</label>
                 <input id="name" name="name" type="text" required />
