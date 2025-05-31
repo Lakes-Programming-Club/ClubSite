@@ -11,6 +11,17 @@ const { filter = 'all', display = 'full'} = Astro.props;
 const now = new Date();
 const parseDate = (str: string) => new Date(str + 'T00:00:00');
 
+const formatDate = (dateStr: string) => {
+    const date = parseDate(dateStr);
+    return new Intl.DateTimeFormat('en-NZ', {
+        weekday: display == "short"? 'short' : 'long',
+        day: '2-digit',
+        month: display == "short"? 'short' : 'long',
+        year: 'numeric'
+    }).format(date);
+};
+
+
 let filteredEvents = events;
 
 if (filter === 'upcoming') {
@@ -26,14 +37,14 @@ if (filter === 'upcoming') {
                 <ul>
                     {filteredEvents.map(event => (
                             <li>
-                                <strong>{event.date}</strong>: {event.title}
+                                <a href=`/events/#${event.title}`><strong>{formatDate(event.date)}</strong>: {event.title} | Room: {event.room}</a>
                             </li>
                     ))}
                 </ul>
         ) : (
             filteredEvents.map(event => (
-                    <article>
-                        <h4>{event.date}</h4>
+                    <article id={event.title}>
+                        <h4>{formatDate(event.date)} | Room: {event.room}</h4>
                         <h3>{event.title}</h3>
                         <p>{event.description}</p>
                     </article>
