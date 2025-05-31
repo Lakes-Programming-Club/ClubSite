@@ -7,10 +7,10 @@ import Footer from "../components/Footer.astro";
 const token = import.meta.env.GITHUB_TOKEN;
 
 const res = await fetch("https://api.github.com/orgs/Lakes-Programming-Club/members", {
-headers: {
-    Authorization: `Bearer ${token}`,
-    Accept: "application/vnd.github+json"
-}
+    headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github+json"
+    }
 });
 
 if (!res.ok) { throw new Error(`Error! status: ${res.status}`) }

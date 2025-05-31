@@ -2,7 +2,7 @@
 interface Social { name: string, icon: string, url: string }
 
 const socials: Social[] = [
-    { name: "Discord", url: "https://discord.gg/kHWXarJYN8", icon: "/discord.png" }
+    { name: "Discord", icon: "discord.png", url: "https://discord.gg/kHWXarJYN8" }
 ]
 
 ---
@@ -19,7 +19,10 @@ const socials: Social[] = [
                 socials.map((social) => (
                     <li class="social">
                         <a class="contrast" href = {social.url} target = "_blank">
-                            <img class = "dark-mode" src ={social.icon} alt = {social.name}/>
+                            {socials.map(() => (
+                                    <img class="icon dark-mode" src={`/light-${social.icon}`} alt={social.name}/>
+                                    <img class="icon light-mode" src={`/dark-${social.icon}`} alt={social.name}/>
+                            ))}
                         </a>
                     </li>
                 ))

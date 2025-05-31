@@ -12,3 +12,12 @@
     margin: 0;
     padding: 0;
 }
+
+.social .icon { display: none; }
+
+@media (prefers-color-scheme: dark) {
+    .social .dark-mode { display: inline; }
+}
+@media (prefers-color-scheme: light) {
+    .social .light-mode { display: inline; }
+}
