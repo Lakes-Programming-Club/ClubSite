@@ -1,0 +1,25 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import {resources} from "../data/resources.ts"
+---
+
+
+<Layout>
+    <Navbar/>
+    <main class="container">
+        <h1>Resources</h1>
+        {resources.map(resource => (
+            <article>
+                <h2>
+                    <a href={resource.url} target="_blank">
+                        <img src={resource.image} alt="" class="resource-icon"/>
+                        {resource.title}
+                    </a>
+                </h2>
+                <p>{resource.description}</p>
+            </article>
+        ))}
+    </main>
+
+</Layout>

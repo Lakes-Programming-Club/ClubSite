@@ -21,3 +21,7 @@
 @media (prefers-color-scheme: light) {
     .social .light-mode { display: inline; }
 }
+
+.resource-icon{
+    width: 1em;
+}
