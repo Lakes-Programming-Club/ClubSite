@@ -22,7 +22,7 @@ const members = await res.json();
 <Layout title="Home">
     <Hero/>
     <main class="container">
-        <section>
+        <article>
             <h2>What We Do</h2>
             <ul>
                 <li>Workshops on Foo, Bar, and more</li>
@@ -30,12 +30,12 @@ const members = await res.json();
                 <li>Spam and eggs green</li>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing</li>
             </ul>
-        </section>
-        <section>
+        </article>
+        <article>
             <h2>Upcoming Events</h2>
             <EventList filter="upcoming" display="short"/>
-        </section>
-        <section id="join">
+        </article>
+        <article id="join">
             <h2>Get Involved</h2>
             <h4>So far we have {members.length} members</h4>
             <form>
@@ -45,7 +45,7 @@ const members = await res.json();
                 <input id="email" name="email" type="email" required />
                 <button type="submit">Sign Up</button>
             </form>
-        </section>
+        </article>
     </main>
     <Footer/>
 </Layout>
