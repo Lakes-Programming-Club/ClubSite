@@ -24,6 +24,12 @@ import Footer from "../components/Footer.astro";
                 <option value="all">All</option>
                 <option value="kotlin">Kotlin</option>
             </select>
+
+            <label>
+                <input type="checkbox" id="precise-mode" />
+                Precise Mode
+            </label>
+
         </div>
 
 
@@ -44,8 +50,8 @@ import Footer from "../components/Footer.astro";
                     </article>
             ))}
         </div>
+
     </main>
     <Footer />
-
     <script type="module" src="/scripts/filterResources.js"></script>
 </Layout>
