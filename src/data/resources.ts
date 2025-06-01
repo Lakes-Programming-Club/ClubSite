@@ -33,5 +33,22 @@ export const resources = [
         level: "all",
         language: "all"
     },
+    {
+        title: "Victor Gordan",
+        url: `https://www.youtube.com/c/victorgordan`,
+        description: "Opengl stuff",
+        image: `/resource-icons/victorgordan.jpg`,
+        level: "advanced",
+        language: "C++"
+    },
+    {
+        title: "Sebastian Lague",
+        url: `https://www.youtube.com/c/SebastianLague`,
+        description: "Procedural C# and unity stuff like terrain and planet generation",
+        image: `/resource-icons/sebastian.jpg`,
+        level: "intermediate",
+        language: "C#"
+    },
+
 ];
 
