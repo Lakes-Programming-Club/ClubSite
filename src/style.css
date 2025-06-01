@@ -21,3 +21,29 @@
 @media (prefers-color-scheme: light) {
     .social .light-mode { display: inline; }
 }
+
+.resource-icon{
+    width: 1em;
+}
+
+.filter{
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    max-width: 200px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.tag {
+    background-color: black;
+    color: var(--pico-color-azure-50);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}

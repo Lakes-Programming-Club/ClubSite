@@ -1,0 +1,63 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import {resources} from "../data/resources.ts"
+import Footer from "../components/Footer.astro";
+---
+
+
+<Layout>
+    <Navbar/>
+    <main class="container">
+        <h1>Resources</h1>
+        <div class="filters">
+            <h5><label for="level">Level</label></h5>
+            <select id="level" class="filter">
+                <option value="all">All</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+
+            <h5><label for="language">Language</label></h5>
+            <select id="language" class="filter">
+                <option value="all">All</option>
+                <option value="kotlin">Kotlin</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+            </select>
+
+            <label>
+                <input type="checkbox" id="precise-mode" />
+                Precise Mode
+            </label>
+
+        </div>
+
+
+        <div id="resource-list">
+            {resources.map(resource => (
+                    <article
+                            class="resource"
+                            data-level={resource.level}
+                            data-language={resource.language}
+                    >
+                        <h2>
+                            <a href={resource.url} target="_blank">
+                                <img src={resource.image} alt="" class="resource-icon" />
+                                {resource.title}
+                            </a>
+                        </h2>
+                        <p>{resource.description}</p>
+
+                        <span class="tag">{resource.level}</span>
+                        <span class="tag">{resource.language}</span>
+
+                    </article>
+            ))}
+        </div>
+
+    </main>
+    <Footer />
+    <script type="module" src="../scripts/filterResources.ts"></script>
+</Layout>
