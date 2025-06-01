@@ -10,17 +10,42 @@ import Footer from "../components/Footer.astro";
     <Navbar/>
     <main class="container">
         <h1>Resources</h1>
-        {resources.map(resource => (
-            <article>
-                <h2>
-                    <a href={resource.url} target="_blank">
-                        <img src={resource.image} alt="" class="resource-icon"/>
-                        {resource.title}
-                    </a>
-                </h2>
-                <p>{resource.description}</p>
-            </article>
-        ))}
+        <div class="filters">
+            <h5><label for="level">Level</label></h5>
+            <select id="level" class="filter">
+                <option value="all">All</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+
+            <h5><label for="language">Language</label></h5>
+            <select id="language" class="filter">
+                <option value="all">All</option>
+                <option value="kotlin">Kotlin</option>
+            </select>
+        </div>
+
+
+        <div id="resource-list">
+            {resources.map(resource => (
+                    <article
+                            class="resource"
+                            data-level={resource.level}
+                            data-language={resource.language}
+                    >
+                        <h2>
+                            <a href={resource.url} target="_blank">
+                                <img src={resource.image} alt="" class="resource-icon" />
+                                {resource.title}
+                            </a>
+                        </h2>
+                        <p>{resource.description}</p>
+                    </article>
+            ))}
+        </div>
     </main>
-    <Footer/>
+    <Footer />
+
+    <script type="module" src="/scripts/filterResources.js"></script>
 </Layout>

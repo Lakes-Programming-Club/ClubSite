@@ -25,3 +25,15 @@
 .resource-icon{
     width: 1em;
 }
+
+.filter{
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    max-width: 200px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
