@@ -22,11 +22,11 @@
     .social .light-mode { display: inline; }
 }
 
-.resource-icon{
+.resource-icon {
     width: 1em;
 }
 
-.filter{
+.filter {
     font-size: 0.875rem;
     padding: 0.25rem 0.5rem;
     max-width: 200px;
@@ -39,7 +39,6 @@
 }
 
 .tag {
-    /*background-color: var(--pico-color);*/
     color: var(--pico-color);
     border-color: var(--pico-contrast-border);
     border-width: var(--pico-border-width);

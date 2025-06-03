@@ -27,9 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Compile browser scripts
-        run: npx tsc src/scripts/filterResources.ts --outDir public/scripts
-
       - name: Install, build, and upload your site
         uses: withastro/action@v3
 
