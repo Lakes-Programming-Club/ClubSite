@@ -5,6 +5,9 @@ on:
   # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    types: [opened, reopened]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
   schedule:
@@ -39,6 +42,7 @@ jobs:
 
 
   deploy:
+    if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     environment:
