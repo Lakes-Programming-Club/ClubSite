@@ -39,10 +39,13 @@
 }
 
 .tag {
-    background-color: black;
-    color: var(--pico-color-azure-50);
+    /*background-color: var(--pico-color);*/
+    color: var(--pico-color);
+    border-color: var(--pico-contrast-border);
+    border-width: var(--pico-border-width);
+    border-style: solid;
     padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
+    border-radius: 64px;
     font-size: 0.75rem;
     font-weight: 500;
     white-space: nowrap;
